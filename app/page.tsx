@@ -232,7 +232,6 @@ export default function Home() {
   className="border-t border-gray-200 bg-[#fafafa] px-6 py-28"
 >
   <div className="mx-auto max-w-6xl">
-
     {/* Section heading */}
     <div className="mb-16">
       <p className="text-sm font-medium uppercase tracking-[0.2em] text-blue-600">
@@ -244,8 +243,8 @@ export default function Home() {
       </h2>
 
       <p className="mt-5 max-w-2xl text-base leading-8 text-gray-600">
-        Technologies and tools I've worked with through academic projects,
-        practical development experience and continuous learning.
+        Technologies and tools I've explored through academic projects,
+        practical development experience, software testing and continuous learning.
       </p>
     </div>
 
@@ -372,10 +371,44 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Analytics and tools */}
+      {/* Software Testing and QA */}
       <div className="group rounded-2xl border border-gray-200 bg-white p-7 transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl">
         <div className="mb-7 flex items-center justify-between">
           <span className="text-sm font-medium text-blue-600">06</span>
+          <span className="text-xs text-gray-400">QUALITY</span>
+        </div>
+
+        <h3 className="text-xl font-semibold text-gray-900">
+          Software Testing & QA
+        </h3>
+
+        <p className="mt-2 text-sm leading-6 text-gray-500">
+          Applying testing techniques to validate application functionality,
+          identify defects and improve software quality.
+        </p>
+
+        <div className="mt-6 flex flex-wrap gap-2">
+          {[
+            "Manual Testing",
+            "Functional Testing",
+            "Regression Testing",
+            "Test Case Design",
+            "Bug Reporting",
+            "API Testing",
+            "Postman",
+            "Unit Testing",
+          ].map((skill) => (
+            <span key={skill} className="rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 text-sm text-gray-700 transition group-hover:border-blue-100">
+              {skill}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* Analytics and tools */}
+      <div className="group rounded-2xl border border-gray-200 bg-white p-7 transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl">
+        <div className="mb-7 flex items-center justify-between">
+          <span className="text-sm font-medium text-blue-600">07</span>
           <span className="text-xs text-gray-400">PRODUCTIVITY</span>
         </div>
 
@@ -405,9 +438,9 @@ export default function Home() {
         and gain experience through practical projects.
       </p>
     </div>
-
   </div>
 </section>
+
 
 
       {/* Projects Section */}
@@ -872,12 +905,6 @@ export default function Home() {
           <span aria-hidden="true">↗</span>
         </a>
 
-        <a
-              href="mailto:mirshabsinnen@gmail.com"
-              className="..."
-                               >
-              Email Me
-        </a>
       </div>
 
       {/* Social links */}
