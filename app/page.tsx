@@ -1,6 +1,8 @@
 import { Suspense } from "react";
 import { connection } from "next/server";
 import Navbar from "@/components/Navbar";
+import BackToTop from "@/components/BackToTop";
+import Reveal from "@/components/Reveal";
 
 async function CurrentYear() {
   await connection();
@@ -13,113 +15,71 @@ export default function Home() {
       {/* Navigation */}
       <Navbar />
 
+      <BackToTop />
+
+      
       {/* Hero Section */}
       <section
         id="home"
-        className="mx-auto grid min-h-[80vh] max-w-6xl items-center gap-12 px-6 py-16 md:grid-cols-2"
+        className="mx-auto flex min-h-[80vh] max-w-6xl items-center justify-center px-6 py-20"
       >
-        
-<div>
-  <p className="mb-5 text-sm font-medium uppercase tracking-[0.2em] text-blue-600">
-    Welcome to my portfolio
-  </p>
+        <div className="mx-auto w-full max-w-3xl text-center">
 
-  <h1 className="text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
-          Hi, I'm Mirshab.
-    <br />
-    <span className="text-3xl text-blue-600 sm:text-4xl lg:text-[2.75rem]">
-          Technology & Business
-    </span>
-  </h1>
+          <p className="mb-6 text-sm font-medium uppercase tracking-[0.2em] text-blue-600">
+            Welcome to my portfolio
+          </p>
 
-  <p className="mt-6 max-w-lg text-base leading-8 text-gray-600">
-    I'm an Information Technology undergraduate at SLIIT
-    interested in how technology, data and problem-solving
-    can create meaningful solutions. Through university
-    projects and professional experience in finance, I've
-    developed an interest in software development, business
-    and data analysis, quality assurance, and mobile
-    applications.
-  </p>
+          <h1 className="text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
+            Hi, I'm Mirshab.
+            <br />
+            <span className="text-3xl text-blue-600 sm:text-4xl lg:text-[2.75rem]">
+              Technology & Business
+            </span>
+          </h1>
 
-  <div className="mt-9 flex flex-wrap gap-4">
-    <a
-      href="#projects"
-      className="rounded-full bg-blue-600 px-7 py-3 text-sm font-medium text-white transition duration-300 hover:-translate-y-1 hover:bg-blue-700 hover:shadow-lg"
-    >
-      Explore My Work
-    </a>
+          <p className="mx-auto mt-7 max-w-2xl text-base leading-8 text-gray-600">
+            I'm an Information Technology undergraduate at SLIIT
+            interested in how technology, data and problem-solving
+            can create meaningful solutions. Through university
+            projects and practical experience, I've developed an
+            interest in software development, business and data
+            analysis, quality assurance, and mobile applications.
+          </p>
 
-    <a
-      href="#contact"
-      className="rounded-full border border-gray-300 px-7 py-3 text-sm font-medium transition duration-300 hover:-translate-y-1 hover:border-blue-600 hover:bg-blue-50"
-    >
-      Get in Touch
-    </a>
-  </div>
+          <div className="mt-10 flex flex-wrap justify-center gap-4">
+            <a
+              href="#projects"
+              className="rounded-full bg-blue-600 px-7 py-3 text-sm font-medium text-white transition duration-300 hover:-translate-y-1 hover:bg-blue-700 hover:shadow-lg"
+            >
+              Explore My Work
+            </a>
 
-  <p className="mt-10 text-sm text-gray-500">
-    Based in Sri Lanka
-  </p>
-</div>
+            <a
+              href="#contact"
+              className="rounded-full border border-gray-300 px-7 py-3 text-sm font-medium transition duration-300 hover:-translate-y-1 hover:border-blue-600 hover:bg-blue-50"
+            >
+              Get in Touch
+            </a>
+          </div>
 
+          
 
-        {/* Profile Photo Placeholder */}
-        
-<div className="flex justify-center md:justify-end">
-  <div className="group relative aspect-square w-full max-w-sm">
+          <p className="mt-12 text-sm text-gray-500">
+            Based in Sri Lanka
+          </p>
 
-    {/* Decorative background */}
-    <div className="absolute -right-4 -top-4 h-32 w-32 rounded-full bg-blue-100 blur-2xl transition duration-500 group-hover:bg-blue-200" />
-    <div className="absolute -bottom-4 -left-4 h-32 w-32 rounded-full bg-indigo-100 blur-2xl" />
-
-    {/* Main profile card */}
-    <div className="relative flex h-full flex-col items-center justify-center overflow-hidden rounded-3xl border border-gray-200 bg-gradient-to-br from-white via-blue-50 to-gray-100 shadow-sm transition duration-500 hover:-translate-y-2 hover:shadow-xl">
-
-      {/* Decorative circle */}
-      <div className="absolute -right-16 -top-16 h-56 w-56 rounded-full border border-blue-200/60" />
-      <div className="absolute -bottom-20 -left-16 h-64 w-64 rounded-full border border-blue-200/60" />
-
-      <div className="relative z-10 text-center">
-
-        <div className="mx-auto mb-6 flex h-32 w-32 items-center justify-center rounded-full border-4 border-white bg-gradient-to-br from-blue-500 to-indigo-600 text-5xl font-bold text-white shadow-lg transition duration-500 group-hover:scale-105">
-          M
         </div>
-
-        <h3 className="text-2xl font-bold tracking-tight text-gray-900">
-          Mirshab
-        </h3>
-
-        <p className="mt-2 text-sm font-medium text-blue-600">
-          IT Undergraduate at SLIIT
-        </p>
-
-        <div className="mx-auto mt-6 h-1 w-12 rounded-full bg-blue-500" />
-
-        <p className="mt-4 text-sm text-gray-500">
-          Technology · Data · Problem Solving
-        </p>
-
-      </div>
-
-      {/* Bottom label */}
-      <div className="absolute bottom-6 rounded-full border border-white/80 bg-white/80 px-5 py-2 text-xs font-medium text-gray-600 shadow-sm backdrop-blur">
-        Based in Sri Lanka
-      </div>
-
-    </div>
-  </div>
-</div>
-
       </section>
 
+
       {/* About Section */}
-      
-<section
-  id="about"
-  className="relative overflow-hidden border-t border-gray-200 bg-white px-6 py-28"
->
-  <div className="mx-auto max-w-6xl">
+
+      <Reveal>
+      <section
+        id="about"
+        className="relative overflow-hidden border-t border-gray-200 bg-white px-6 py-28"
+      >
+    <div className="mx-auto max-w-6xl">
 
     {/* Section heading */}
     <div className="mb-16">
@@ -222,16 +182,18 @@ export default function Home() {
     </div>
   </div>
 </section>
+</Reveal>
 
 
       {/* Skills Section */}
       
+   <Reveal>
+     <section
+       id="skills"
+       className="border-t border-gray-200 bg-[#fafafa] px-6 py-28"
+     >
+   <div className="mx-auto max-w-6xl">
 
-<section
-  id="skills"
-  className="border-t border-gray-200 bg-[#fafafa] px-6 py-28"
->
-  <div className="mx-auto max-w-6xl">
     {/* Section heading */}
     <div className="mb-16">
       <p className="text-sm font-medium uppercase tracking-[0.2em] text-blue-600">
@@ -440,11 +402,12 @@ export default function Home() {
     </div>
   </div>
 </section>
+</Reveal>
 
 
 
       {/* Projects Section */}
-      
+   <Reveal>    
 <section
   id="projects"
   className="border-t border-gray-200 bg-white px-6 py-28"
@@ -734,13 +697,15 @@ export default function Home() {
 
   </div>
 </section>
+</Reveal>
 
 
-      {/* Experience & Education Section */}
       
+{/* Experience & Education Section */}
+<Reveal>
 <section
   id="experience"
-  className="border-t border-gray-200 bg-[#fafafa] px-6 py-28"
+  className="relative overflow-hidden border-t border-gray-200 bg-[#fafafa] px-6 py-28"
 >
   <div className="mx-auto max-w-6xl">
 
@@ -756,38 +721,46 @@ export default function Home() {
 
       <p className="mt-5 max-w-2xl text-base leading-8 text-gray-600">
         My professional experience and academic journey have helped
-        me develop a broader understanding of technology, problem-solving
-        and business processes.
+        me develop a broader understanding of technology,
+        problem-solving and business processes.
       </p>
     </div>
 
-    <div className="grid gap-12 md:grid-cols-2">
+    <div className="grid gap-16 md:grid-cols-2">
 
-      {/* Experience */}
+      {/* Professional Experience */}
       <div>
-        <h3 className="mb-8 text-xl font-semibold text-gray-900">
-          Professional Experience
-        </h3>
+        <div className="mb-10 flex items-center gap-3">
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
+            <span className="text-lg">💼</span>
+          </div>
 
-        <div className="border-l-2 border-blue-600 pl-6">
-
-          <p className="text-sm font-medium text-blue-600">
+          <h3 className="text-xl font-semibold text-gray-900">
             Professional Experience
+          </h3>
+        </div>
+
+        <div className="relative border-l-2 border-blue-200 pl-7">
+
+          <div className="absolute -left-[9px] top-1 h-4 w-4 rounded-full border-4 border-[#fafafa] bg-blue-600" />
+
+          <p className="text-sm font-semibold text-blue-600">
+            May 2023 – October 2024
           </p>
 
           <h4 className="mt-3 text-xl font-bold text-gray-900">
             Finance Assistant / Finance Executive
           </h4>
 
-          <p className="mt-2 text-sm text-gray-500">
+          <p className="mt-2 text-sm font-medium text-gray-500">
             Debt Works Credit Management
           </p>
 
           <p className="mt-5 text-sm leading-7 text-gray-600">
-            Gained practical experience supporting financial operations
-            and administrative processes, including invoice preparation,
-            VAT documentation, financial record maintenance and
-            accounts receivable.
+            Gained practical experience supporting financial
+            operations and administrative processes, including
+            invoice preparation, VAT documentation, financial
+            record maintenance and accounts receivable.
           </p>
 
           <div className="mt-6 flex flex-wrap gap-2">
@@ -798,64 +771,113 @@ export default function Home() {
             ].map((skill) => (
               <span
                 key={skill}
-                className="rounded-lg border border-gray-200 bg-white px-3 py-2 text-xs font-medium text-gray-600"
+                className="rounded-lg border border-gray-200 bg-white px-3 py-2 text-xs font-medium text-gray-600 transition-all duration-300 hover:-translate-y-1 hover:border-blue-300 hover:text-blue-600"
               >
                 {skill}
               </span>
             ))}
           </div>
+
         </div>
       </div>
 
       {/* Education */}
       <div>
-        <h3 className="mb-8 text-xl font-semibold text-gray-900">
-          Education
-        </h3>
+        <div className="mb-10 flex items-center gap-3">
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
+            <span className="text-lg">🎓</span>
+          </div>
 
-        <div className="border-l-2 border-blue-600 pl-6">
+          <h3 className="text-xl font-semibold text-gray-900">
+            Education
+          </h3>
+        </div>
 
-          <p className="text-sm font-medium text-blue-600">
-            Undergraduate Studies
-          </p>
+        <div className="relative border-l-2 border-blue-200 pl-7">
 
-          <h4 className="mt-3 text-xl font-bold text-gray-900">
-            BSc (Hons) in Information Technology
-          </h4>
+          {/* SLIIT */}
+          <div className="relative pb-12">
+            <div className="absolute -left-[35px] top-1 h-4 w-4 rounded-full border-4 border-[#fafafa] bg-blue-600" />
 
-          <p className="mt-2 text-sm text-gray-500">
-            Sri Lanka Institute of Information Technology (SLIIT)
-          </p>
-
-          <p className="mt-5 text-sm leading-7 text-gray-600">
-            Pursuing a multidisciplinary degree that provides a
-            broad foundation across computing, technology and
-            business-related disciplines. The programme offers
-            exposure to various areas of IT, helping me understand
-            how different technologies and disciplines work together
-            to solve real-world problems.
-          </p>
-
-          <div className="mt-7">
-            <p className="mb-3 text-sm font-semibold text-gray-900">
-              Areas of Academic Exposure
+            <p className="text-sm font-semibold text-blue-600">
+              October 2023 – Present
             </p>
 
-            <div className="flex flex-wrap gap-2">
+            <h4 className="mt-3 text-xl font-bold text-gray-900">
+              BSc (Hons) in Information Technology
+            </h4>
+
+            <p className="mt-2 text-sm font-medium text-gray-500">
+              Sri Lanka Institute of Information Technology (SLIIT)
+            </p>
+
+            <p className="mt-5 text-sm leading-7 text-gray-600">
+              Pursuing a multidisciplinary degree that provides
+              a broad foundation across computing, technology
+              and business-related disciplines. The programme
+              has exposed me to different areas of IT and
+              their practical applications.
+            </p>
+
+            <div className="mt-6">
+              <p className="mb-3 text-sm font-semibold text-gray-900">
+                Areas of Academic Exposure
+              </p>
+
+              <div className="flex flex-wrap gap-2">
+                {[
+                  "Software Development",
+                  "Data Science & Analytics",
+                  "Information Security",
+                  "UI/UX Design",
+                  "Database Systems",
+                  "Computer Networking",
+                  "IT Business Management"
+                ].map((area) => (
+                  <span
+                    key={area}
+                    className="rounded-lg border border-gray-200 bg-white px-3 py-2 text-xs font-medium text-gray-600 transition-all duration-300 hover:-translate-y-1 hover:border-blue-300 hover:text-blue-600"
+                  >
+                    {area}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* School Education */}
+          <div className="relative">
+            <div className="absolute -left-[35px] top-1 h-4 w-4 rounded-full border-4 border-[#fafafa] bg-blue-600" />
+
+            <p className="text-sm font-semibold text-blue-600">
+              January 2009 - February 2023
+            </p>
+
+            <h4 className="mt-3 text-xl font-bold text-gray-900">
+              Zahira College
+            </h4>
+
+            <p className="mt-2 text-sm font-medium text-gray-500">
+              Colombo 10
+            </p>
+
+            <p className="mt-5 text-sm leading-7 text-gray-600">
+              Successfully completed G.C.E. Ordinary Level
+              and Advanced Level examinations, following
+              the Commerce stream.
+            </p>
+
+            <div className="mt-6 flex flex-wrap gap-2">
               {[
-                "Software Development",
-                "Data Science & Analytics",
-                "Information Security",
-                "UI/UX Design",
-                "Database Systems",
-                "Computer Networking",
-                "IT Business Management"
-              ].map((area) => (
+                "G.C.E. O/L",
+                "G.C.E. A/L",
+                "Commerce Stream"
+              ].map((item) => (
                 <span
-                  key={area}
-                  className="rounded-lg border border-gray-200 bg-white px-3 py-2 text-xs font-medium text-gray-600 transition-colors hover:border-blue-200 hover:text-blue-600"
+                  key={item}
+                  className="rounded-lg border border-gray-200 bg-white px-3 py-2 text-xs font-medium text-gray-600 transition-all duration-300 hover:-translate-y-1 hover:border-blue-300 hover:text-blue-600"
                 >
-                  {area}
+                  {item}
                 </span>
               ))}
             </div>
@@ -867,11 +889,13 @@ export default function Home() {
     </div>
   </div>
 </section>
+</Reveal>
 
 
       {/* Contact Section */}
       
 {/* Contact */}
+<Reveal>
 <section
   id="contact"
   className="border-t border-gray-200 bg-white px-6 py-28"
@@ -937,6 +961,7 @@ export default function Home() {
     </div>
   </div>
 </section>
+</Reveal>
 
 {/* Footer */}
 <footer className="border-t border-gray-200 bg-[#fafafa] px-6 py-8">

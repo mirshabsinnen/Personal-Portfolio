@@ -121,16 +121,65 @@ const scrollToSection = (href: string) => {
             })}
           </div>
 
-          {/* Desktop Contact Button */}
-          <a
-            href="#contact"
-            className="group hidden items-center gap-2 rounded-full bg-gray-950 px-5 py-2.5 text-sm font-medium text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-blue-600 hover:shadow-lg hover:shadow-blue-600/20 md:inline-flex"
-          >
-            Let's Talk
-            <span className="transition-transform duration-300 group-hover:translate-x-1">
-              →
-            </span>
-          </a>
+          
+          {/* Desktop Social Links + Contact Button */}
+          <div className="hidden items-center gap-4 md:flex">
+
+            {/* GitHub */}
+            <a
+              href="https://github.com/mirshabsinnen"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub profile"
+              title="GitHub"
+              className="group flex h-9 w-9 items-center justify-center rounded-full text-gray-500 transition-all duration-300 hover:-translate-y-1 hover:bg-gray-100 hover:text-gray-950"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="h-5 w-5 transition-transform duration-300 group-hover:scale-110"
+                aria-hidden="true"
+              >
+                <path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.56.1.76-.24.76-.54v-2.1c-3.1.67-3.76-1.32-3.76-1.32-.5-1.29-1.24-1.63-1.24-1.63-1.02-.7.08-.69.08-.69 1.12.08 1.71 1.15 1.71 1.15 1 .1.76 2.02 3.6 1.53.1-.74.39-1.24.71-1.53-2.47-.28-5.07-1.24-5.07-5.5 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.41.11-2.94 0 0 .94-.3 3.05 1.14a10.6 10.6 0 0 1 5.55 0c2.11-1.44 3.05-1.14 3.05-1.14.61 1.53.23 2.66.11 2.94.72.78 1.15 1.78 1.15 3 0 4.27-2.6 5.22-5.08 5.5.4.35.76 1.02.76 2.06v3.06c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z" />
+              </svg>
+            </a>
+
+            {/* LinkedIn */}
+            <a
+              href="https://linkedin.com/in/mirshab-sinnen"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn profile"
+              title="LinkedIn"
+              className="group flex h-9 w-9 items-center justify-center rounded-full text-gray-500 transition-all duration-300 hover:-translate-y-1 hover:bg-blue-50 hover:text-blue-600"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="h-5 w-5 transition-transform duration-300 group-hover:scale-110"
+                aria-hidden="true"
+              >
+                <path d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.86 0 1.55-.68 1.55-1.52V3.52c0-.84-.69-1.52-1.55-1.52ZM7.93 18.74H4.98V9.23h2.95v9.51ZM6.45 7.93a1.71 1.71 0 1 1 0-3.42 1.71 1.71 0 0 1 0 3.42Zm12.29 10.81h-2.94v-4.63c0-1.1-.02-2.52-1.54-2.52-1.54 0-1.78 1.2-1.78 2.44v4.71H9.54V9.23h2.82v1.3h.04c.39-.74 1.35-1.53 2.78-1.53 2.98 0 3.56 1.96 3.56 4.51v5.23Z" />
+              </svg>
+            </a>
+
+            {/* Let's Talk */}
+            <a
+              href="#contact"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("#contact");
+              }}
+              className="group inline-flex items-center gap-2 rounded-full bg-gray-950 px-5 py-2.5 text-sm font-medium text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-blue-600 hover:shadow-lg hover:shadow-blue-600/20"
+            >
+              Let's Talk
+              <span className="transition-transform duration-300 group-hover:translate-x-1">
+                →
+              </span>
+            </a>
+
+          </div>
+
 
           {/* Mobile Menu Button */}
           <button
@@ -156,7 +205,7 @@ const scrollToSection = (href: string) => {
           inert={!isOpen}
           className={`overflow-hidden transition-all duration-300 ease-in-out md:hidden ${
             isOpen
-              ? "max-h-[420px] translate-y-0 pb-5 opacity-100"
+              ? "max-h-[520px] translate-y-0 pb-5 opacity-100"
               : "pointer-events-none max-h-0 -translate-y-2 pb-0 opacity-0"
           }`}
         >
@@ -192,6 +241,38 @@ const scrollToSection = (href: string) => {
               >
                 Let's Talk
               </a>
+
+              {/* Mobile Social Links */}
+              <div className="mt-4 flex items-center justify-center gap-5 border-t border-gray-100 pt-4">
+
+                <a
+                  href="https://github.com/mirshabsinnen"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub profile"
+                  className="flex items-center gap-2 text-sm font-medium text-gray-500 transition-colors hover:text-gray-950"
+                >
+                  <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5" aria-hidden="true">
+                    <path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.56.1.76-.24.76-.54v-2.1c-3.1.67-3.76-1.32-3.76-1.32-.5-1.29-1.24-1.63-1.24-1.63-1.02-.7.08-.69.08-.69 1.12.08 1.71 1.15 1.71 1.15 1 .1.76 2.02 3.6 1.53.1-.74.39-1.24.71-1.53-2.47-.28-5.07-1.24-5.07-5.5 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.41.11-2.94 0 0 .94-.3 3.05 1.14a10.6 10.6 0 0 1 5.55 0c2.11-1.44 3.05-1.14 3.05-1.14.61 1.53.23 2.66.11 2.94.72.78 1.15 1.78 1.15 3 0 4.27-2.6 5.22-5.08 5.5.4.35.76 1.02.76 2.06v3.06c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z" />
+                  </svg>
+                  GitHub
+                </a>
+
+                <a
+                  href="https://linkedin.com/in/mirshab-sinnen"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn profile"
+                  className="flex items-center gap-2 text-sm font-medium text-gray-500 transition-colors hover:text-blue-600"
+                >
+                  <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5" aria-hidden="true">
+                    <path d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.86 0 1.55-.68 1.55-1.52V3.52c0-.84-.69-1.52-1.55-1.52ZM7.93 18.74H4.98V9.23h2.95v9.51ZM6.45 7.93a1.71 1.71 0 1 1 0-3.42 1.71 1.71 0 0 1 0 3.42Zm12.29 10.81h-2.94v-4.63c0-1.1-.02-2.52-1.54-2.52-1.54 0-1.78 1.2-1.78 2.44v4.71H9.54V9.23h2.82v1.3h.04c.39-.74 1.35-1.53 2.78-1.53 2.98 0 3.56 1.96 3.56 4.51v5.23Z" />
+                  </svg>
+                  LinkedIn
+                </a>
+
+              </div>
+
             </div>
           </div>
         </div>

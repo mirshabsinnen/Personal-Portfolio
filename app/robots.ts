@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://mirshabsinnen.vercel.app/sitemap.xml",
+    sitemap: "https://mirshabsinnen.me/sitemap.xml",
   };
 }

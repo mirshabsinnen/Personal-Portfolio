@@ -14,10 +14,10 @@ const geistMono = Geist_Mono({
 });
 
 // Update this when your permanent domain is ready.
-const siteUrl = "https://mirshabsinnen.vercel.app";
+const siteUrl = "https://mirshabsinnen.me";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL("https://mirshabsinnen.me"),
 
   title: {
     default: "Mirshab Sinnen | IT Undergraduate & Aspiring IT Professional",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "/",
+    url: "https://mirshabsinnen.me",
     siteName: "Mirshab Sinnen Portfolio",
     title: "Mirshab Sinnen | IT Undergraduate",
     description:
